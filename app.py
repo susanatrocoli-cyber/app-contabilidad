@@ -293,7 +293,7 @@ def transfer_data(contacts_file, codigo_length):
     
 #Interfaz 2
 
-# Función para agregar el año 2024 si falta
+# Función para agregar el año 2026 si falta
 
 def aplicar_formato_excel_gastos(df):
 
@@ -410,7 +410,7 @@ def configurar_gastos():
                 # Crear el DataFrame de gastos con los datos transformados
                 gastos_df = pd.DataFrame()
                 try:
-                    gastos_df['Fecha de emisión'] = pd.to_datetime(aquacee_df['Fecha'].astype(str) + "/2024", format="%d/%m/%Y", errors='coerce').dt.strftime('%d-%m-%Y')
+                    gastos_df['Fecha de emisión'] = pd.to_datetime(aquacee_df['Fecha'].astype(str) + "/2026", format="%d/%m/%Y", errors='coerce').dt.strftime('%d-%m-%Y')
                 except Exception as fecha_error:
                     st.error(f"Error al convertir las fechas: {fecha_error}")
                     gastos_df['Fecha de emisión'] = ''
@@ -667,7 +667,7 @@ def configurar_ingresos():
                     ingresos_df = pd.DataFrame()
                     # Manejar posibles errores en la conversión de fechas
                     try:
-                        ingresos_df['Fecha de emisión'] = pd.to_datetime(aquacee_df['Fecha'].astype(str) + "/2024", format="%d/%m/%Y", errors='coerce').dt.strftime('%d-%m-%Y')
+                        ingresos_df['Fecha de emisión'] = pd.to_datetime(aquacee_df['Fecha'].astype(str) + "/2026", format="%d/%m/%Y", errors='coerce').dt.strftime('%d-%m-%Y')
                     except Exception as fecha_error:
                         st.error(f"Error al convertir las fechas: {fecha_error}")
                         ingresos_df['Fecha de emisión'] = ''
